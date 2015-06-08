@@ -1,0 +1,16 @@
+{
+  "name": "query-engine",
+  "version": "0.1.0",
+  "description": "A distributed query engine",
+  "dependencies": {
+    "dnode": "^1.2.1",
+    "mysql": "^2.7.0"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xichuanglian/query-engine.git"
+  }
+}
