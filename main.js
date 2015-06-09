@@ -7,7 +7,7 @@ var error_page = require("./lib/error_page.js");
 const PORT = 8080;
 
 var router = new Router();
-router.add("/api", controller);
 router.add("/static", static_handler);
-router.add("", error_page(404));
+router.add("/", controller);
+router.add("", error_page.page(404));
 var server = new Server(PORT, 0, router);
