@@ -1,13 +1,17 @@
-var Server = require("./lib/server.js");
-var Router = require("./lib/router.js");
+var Server = require("./lib/server.js").Server;
+var Router = require("./lib/router.js").Router;
 var static_handler = require("./lib/static.js");
-var controller = require("./controller");
+var controller = require("./lib/controller.js");
 var error_page = require("./lib/error_page.js");
+var path = require("path");
 
-const PORT = 8080;
+const CONFIG = require(path.join(process.cwd(), "config.json"));
 
 var router = new Router();
 router.add("/static", static_handler);
-router.add("/", controller);
+router.add("/", controller.handle);
 router.add("", error_page.page(404));
-var server = new Server(PORT, 0, router);
+var server = [];
+for (var i = 0; i < 4; ++i) {
+    server[i] = new Server(CONFIG.PORT, i, router);
+}
