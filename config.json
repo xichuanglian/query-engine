@@ -1,3 +1,7 @@
 {
-  "PORT" : 8080
+  "PORT" : 8080,
+  "MYSQL" : "166.111.71.25",
+  "DB_USER" : "root",
+  "DB_PASSWORD" : "123456",
+  "SITES" : ["site1", "site2", "site3", "site4"]
 }
